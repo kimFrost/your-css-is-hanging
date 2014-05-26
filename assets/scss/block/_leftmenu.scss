@@ -1,0 +1,94 @@
+
+$__blockName: 'leftmenu';
+
+$__leftmenuIndicatorSize: 10px;
+$__leftmenuIndicatorSizeNoPx: 10;
+$__leftmenuIndicatorOffsetRight: -10px;
+
+$__distToCenter: (sqrt(($__leftmenuIndicatorSizeNoPx * $__leftmenuIndicatorSizeNoPx) + ($__leftmenuIndicatorSizeNoPx * $__leftmenuIndicatorSizeNoPx)) / 2);
+
+@include block($__blockName) {
+	width: 100%;
+	display: block;
+	position: relative;
+	font-family: $font_gudea;
+	font-weight: bold;
+	color: $color_black;
+	&:after  {
+		content: "";
+		display: block;
+		clear: both;
+	}
+	@include e(lv1) {
+		width: 100%;
+		display: block;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	@include e(item) {
+		@include fontSize(gamma, 0); // 14
+		width: 100%;
+		display: block;
+		margin: 0;
+		padding: 0;
+		font-family: inherit;
+		color: inherit;
+		font-weight: inherit;
+		position: relative;
+		margin-bottom: 10px;
+		text-transform: uppercase;
+		&:after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		@include m(":hover") {
+			color: $color_lagoonblue;
+			@include e(itemindicator) {
+				//display: block;
+			}
+		}
+		@include m(active) {
+			color: $color_lagoonblue;
+			@include e(itemindicator) {
+				display: block;
+			}
+		}
+		@include m(category) {
+			@include fontSize(zeta, 0); // 22
+			padding-top: 10px;
+			color: $color_summerorrange;
+			&:hover {
+				color: $color_summerorrange;
+			}
+		}
+	}
+	@include e(itemindicator) {
+		position: absolute;
+		right: -$__leftmenuIndicatorSize;
+		height: $__distToCenter * 2px;
+		width: $__leftmenuIndicatorSize;
+		margin-left: -($__leftmenuIndicatorSize / 2);
+		z-index: 1;
+		overflow: hidden;
+		top: 50%;
+		margin-top: -#{$__distToCenter}px;
+		display: none;
+		&:before {
+			@include transform-origin(0%, 0%);
+			@include rotate(45deg);
+			content: "";
+			display: block;
+			position: absolute;
+			top: 50%;
+			margin-top: -#{$__distToCenter}px;
+			width: $__leftmenuIndicatorSize;
+			height: $__leftmenuIndicatorSize;
+			background-color: $color_white;
+			border-right: 1px solid $color_lightgray;
+			border-top: 1px solid $color_lightgray;
+		}
+
+	}
+}

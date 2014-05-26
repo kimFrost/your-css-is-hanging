@@ -1,0 +1,47 @@
+
+$__blockName: 'content';
+
+
+@include block($__blockName) {
+	width: 100%;
+	@include e(main) {
+		position: relative;
+		overflow: hidden;
+		padding-top: 20px;
+		padding-bottom: 30px;
+		@include m(line) {
+			&:before {
+				content: "";
+				display: none;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				width: 1px;
+				background-color: $color_lightgray;
+			}
+		}
+	}
+	@include e(aside) {
+		float: left;
+		width: 300px;
+		min-height: 1px;
+		padding-top: 20px;
+		&:after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		@include e(main, "& + ") {
+			padding-left: 20px;
+			&:before {
+				display: block;
+			}
+		}
+	}
+	@include e(partial) {
+		margin-bottom: 20px;
+		//padding-bottom: 20px;
+	}
+}
+
