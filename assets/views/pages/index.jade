@@ -16,13 +16,49 @@ block append body
 					p Bring in the horns
 				section(data-background="red")
 					h2 All is lost!
-					img(src="http://stream1.gifsoup.com/view2/4267597/zoidberg-seppuku-o-s.gif")
+					img(src="http://stream1.gifsoup.com/view2/4267597/zoidberg-seppuku-o-s.gif", width="100%")
 
 
 			section
 				h1 Goals
 				p Standards?
 				img(src="http://www.explainxkcd.com/wiki/images/6/60/standards.png")
+
+			section
+				section
+					h1 Trends
+					h2 in CSS development
+				section
+					h2 Dry CSS
+					p Don't Repeat Yourself
+					p At få delt css ind i logiske grupper for genbrugelighed.
+					pre
+						code(contenteditable)
+							| %container { width:100%; clear:both; }
+							| .header { @extend %container }
+							| .content { @extend %container }
+							| .footer { @extend %container }
+					p Or
+					pre
+						code(contenteditable)
+							| .container { width:100%; clear:both; }
+					p Afhængig af level of access til Html
+
+				section
+					h2 HTML decoupling
+					p Code against worst case
+					p Rather than the ideal case
+				section
+					h2 SMACSS
+					p Base
+					p Layout
+					p Modules
+					p States
+					p Themes
+				section
+					h2 Bem
+					p The new kid on the Block (Element, Modifier)
+
 
 			section
 				section
@@ -80,42 +116,6 @@ block append body
 					h2 To much?
 
 
-
-			section
-				section
-					h1 Trends
-					h2 in CSS development
-				section
-					h2 Dry CSS
-					p Don't Repeat Yourself
-					p At få delt css ind i logiske grupper for genbrugelighed.
-					pre
-						code(contenteditable)
-							| %container { width:100%; clear:both; }
-							| .header { @extend %container }
-							| .content { @extend %container }
-							| .footer { @extend %container }
-					p Or
-					pre
-						code(contenteditable)
-							| .container { width:100%; clear:both; }
-					p Afhængig af level of access til Html
-
-				section
-					h2 HTML decoupling
-					p Code against worst case
-					p Rather than the ideal case
-				section
-					h2 SMACSS
-					p Base
-					p Layout
-					p Modules
-					p States
-					p Themes
-				section
-					h2 Bem
-					p The new kid on the Block (Element, Modifier)
-
 			section
 				section
 					h1 Opportunities
@@ -125,43 +125,39 @@ block append body
 					a(href="./cactus/btn.html", target="_blank") Btn styleguide
 
 			section
-				h1 Points
-				h2
-
-			section
 				section
 					h1 Modules & Namespacing Fiddle
 				section
 					h2 Jsfiddle
 					p 5
-					iframe(width="100%", height="400", src="http://jsfiddle.net/33GVe/5", allowfullscreen="allowfullscreen", frameborder="0")
+					iframe(width="100%", height="600", src="http://jsfiddle.net/33GVe/5", allowfullscreen="allowfullscreen", frameborder="0")
 				section
 					h2 Jsfiddle
 					p 6
-					iframe(width="100%", height="400", src="http://jsfiddle.net/33GVe/6", allowfullscreen="allowfullscreen", frameborder="0")
+					iframe(width="100%", height="600", src="http://jsfiddle.net/33GVe/6", allowfullscreen="allowfullscreen", frameborder="0")
 				section
 					h2 Jsfiddle
 					p 7
-					iframe(width="100%", height="400", src="http://jsfiddle.net/33GVe/7", allowfullscreen="allowfullscreen", frameborder="0")
+					iframe(width="100%", height="600", src="http://jsfiddle.net/33GVe/7", allowfullscreen="allowfullscreen", frameborder="0")
 
 
-			section
+			//section
 				section
 					h1 Selector Racing
 
 				section
 					h2 When it just doens't add up
-					iframe(width="100%", height="400", src="http://jsfiddle.net/6raxu/11", allowfullscreen="allowfullscreen", frameborder="0")
+					iframe(width="100%", height="600", src="http://jsfiddle.net/6raxu/11", allowfullscreen="allowfullscreen", frameborder="0")
 
 				section
 					h2 H1 selecting with parent state (1/3)
-					iframe(width="100%", height="400", src="http://jsfiddle.net/6raxu/9", allowfullscreen="allowfullscreen", frameborder="0")
+					iframe(width="100%", height="600", src="http://jsfiddle.net/6raxu/9", allowfullscreen="allowfullscreen", frameborder="0")
 				section
 					h2 H1 selecting with parent state (2/3)
-					iframe(width="100%", height="400", src="http://jsfiddle.net/6raxu/10", allowfullscreen="allowfullscreen", frameborder="0")
+					iframe(width="100%", height="600", src="http://jsfiddle.net/6raxu/10", allowfullscreen="allowfullscreen", frameborder="0")
 				section
 					h2 H1 selecting with parent state (3/3)
-					iframe(width="100%", height="400", src="http://jsfiddle.net/6raxu/11", allowfullscreen="allowfullscreen", frameborder="0")
+					iframe(width="100%", height="600", src="http://jsfiddle.net/6raxu/11", allowfullscreen="allowfullscreen", frameborder="0")
 
 
 
@@ -170,10 +166,10 @@ block append body
 					h1 Site encapsulation
 				section
 					h2 Id wrapper
-					iframe(width="100%", height="400", src="http://jsfiddle.net/6raxu/4", allowfullscreen="allowfullscreen", frameborder="0")
+					iframe(width="100%", height="600", src="http://jsfiddle.net/6raxu/4", allowfullscreen="allowfullscreen", frameborder="0")
 				section
 					h2 class wrapper
-					iframe(width="100%", height="400", src="http://jsfiddle.net/6raxu/5", allowfullscreen="allowfullscreen", frameborder="0")
+					iframe(width="100%", height="600", src="http://jsfiddle.net/6raxu/5", allowfullscreen="allowfullscreen", frameborder="0")
 
 
 			section
@@ -181,11 +177,11 @@ block append body
 					h1 Tag selecting & Decoupling
 				section
 					h2 A simple list (1/2)
-					iframe(width="100%", height="400", src="http://jsfiddle.net/2962s/1", allowfullscreen="allowfullscreen", frameborder="0")
+					iframe(width="100%", height="600", src="http://jsfiddle.net/2962s/1", allowfullscreen="allowfullscreen", frameborder="0")
 
 				section
 					h2 A simple list (2/2)
-					iframe(width="100%", height="400", src="http://jsfiddle.net/2962s/3", allowfullscreen="allowfullscreen", frameborder="0")
+					iframe(width="100%", height="600", src="http://jsfiddle.net/2962s/3", allowfullscreen="allowfullscreen", frameborder="0")
 
 
 
