@@ -135,5 +135,5 @@ module.exports = function (grunt) {
 	grunt.registerTask('default', ['concat', 'copy', 'compass', 'cssmin', 'jade', 'uglify']);
 	grunt.registerTask('dev', ['concat', 'copy', 'compass', 'jade', 'watch']);
 	grunt.registerTask('renderview', ['jade']);
-	grunt.registerTask('mee', ['cactuspilot']);
+	grunt.registerTask('cactus', ['cactuspilot']);
 };

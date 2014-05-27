@@ -17,7 +17,7 @@ This is a "#{$__blockName}" module.
 
 /*MARKUP:OPEN*//*
 <div class="#{$__blockName}">
-	<div class="btn__text">Btn module</div>
+	Button Text
 </div>
 *//*MARKUP:CLOSE*/
 
@@ -27,15 +27,13 @@ This is a "#{$__blockName}" module.
 @include block($__blockName) {
 	@include fontSize(gamma, 0);
 	@include border-radius($__btnCornerRadius, $__btnCornerRadius, $__btnCornerRadius, $__btnCornerRadius);
-	@include gradient($color_lightgray, $color_lightgray, darken($color_lightgray, 5%), vertical, 55%, 95%);
-	color: $color_textdarkgray;
+	background-color: #808080;
+	color: #000;
 	padding: 0px $__btnCornerRadius;
 	height: $__btnHeight;
 	line-height: $__btnHeight;
 	font-family: $font_gudea;
 	font-weight: bold;
-	border-top: 1px solid lighten($color_lightgray, 10%);
-	border-bottom: 1px solid darken($color_lightgray, 15%);
 	cursor: pointer;
 	display: inline-block;
 	text-transform: uppercase;
@@ -47,35 +45,31 @@ This is a "#{$__blockName}" module.
 		-moz-box-sizing: border-box;
 		-webkit-box-sizing: border-box;
 	}
-	&:hover {
-		@include gradient(lighten($color_lightgray, 5%), lighten($color_lightgray, 5%), $color_lightgray, vertical, 55%, 95%);
-	}
-	&:active {
-		@include gradient(darken($color_lightgray, 5%), darken($color_lightgray, 5%), $color_lightgray, vertical, 5%, 45%);
-		border-top: 1px solid darken($color_lightgray, 15%);
-		border-bottom: 1px solid lighten($color_lightgray, 10%);
-	}
-	@include m(cut) {
-		display: block;
-	}
-	@include m(fit) {
-		width: 100%;
+
+	@include m(big) {
+		@include fontSize(epsilon, 0);
+		@include border-radius($__btnCornerRadius * 2, $__btnCornerRadius * 2, $__btnCornerRadius * 2, $__btnCornerRadius * 2);
+		padding: 0px $__btnCornerRadius * 2;
+		height: $__btnHeight * 2;
+		line-height: $__btnHeight * 2;
 	}
 
 	// Themes
 	@include m(orange) {
-		@include gradient($color_summerorrange, $color_summerorrange, darken($color_summerorrange, 5%), vertical, 55%, 95%);
+		background-color: $color_summerorrange;
 		color: $color_white;
-		border-top: 1px solid lighten($color_summerorrange, 10%);
-		border-bottom: 1px solid darken($color_summerorrange, 15%);
-		&:hover {
-			@include gradient(lighten($color_summerorrange, 5%), lighten($color_summerorrange, 5%), $color_summerorrange, vertical, 55%, 95%);
-		}
-		&:active {
-			@include gradient(darken($color_summerorrange, 5%), darken($color_summerorrange, 5%), $color_summerorrange, vertical, 5%, 45%);
-			border-top: 1px solid darken($color_summerorrange, 15%);
-			border-bottom: 1px solid lighten($color_summerorrange, 10%);
-		}
+	}
+	@include m(red) {
+		background-color: red;
+		color: $color_white;
+	}
+	@include m(blue) {
+		background-color: blue;
+		color: #fff;
+	}
+	@include m(black) {
+		background-color: black;
+		color: $color_white;
 	}
 
 }
